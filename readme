@@ -12,13 +12,13 @@
 • 이 때 pracMapper.xml 에 작성된 namespace 의 value 가 pracMapper.xml에 작성된 쿼리의 토대가 되는 mapper interface 의 이름과 같다면, mapper.xml 파일의 이름은 쿼리 실행과정에
 	아무런 영향을 끼치지 않는다고 가정했음
 • 이 경우에 mapper test 를 실행했을 때 BindingException 이 발생
-•	에러 발생 후, interface 파일과 mapper.xml 파일의 이름을 일치시키니 정상적으로 작동, 에러 해결됨
+• 에러 발생 후, interface 파일과 mapper.xml 파일의 이름을 일치시키니 정상적으로 작동, 에러 해결됨
 
-•	이 에러가 발생한 이유는 mapper interace 와 mapper.xml 이 같아야 mybatis가 두 파일을 자동으로 매핑하지 못해서발생
+• 이 에러가 발생한 이유는 mapper interace 와 mapper.xml 이 같아야 mybatis가 두 파일을 자동으로 매핑하지 못해서발생
 
 • 이 외에도 namespace를 바꿔서 테스트 했는데 illegalStateException 에러가 발생
-•	이 에러가 발생한 이유는 mybatis 의 namespace에 관한 name resolution rules 때문인데, mybatis 는 statments, result maps, cashes 등 과 같은 모든 naming 된 요소들에 
-	동일한 name resolution rules를 적용함
+• 이 에러가 발생한 이유는 mybatis 의 namespace에 관한 name resolution rules 때문인데, mybatis 는 statments, result maps, cashes 등 과 같은 모든 naming 된 요소들에 
+  동일한 name resolution rules를 적용함
 • 이 rules 에는 두가지 분류가 있는데
 	1. fully qualified names 의 경우
 		 대상의 이름을 패키지 이름을 포함한 직접적인 형태로 지정했을 경우, 모든 조건을 만족하는 요소가 스캔 대상으로 설정되고, 발견되면 사용됨  
